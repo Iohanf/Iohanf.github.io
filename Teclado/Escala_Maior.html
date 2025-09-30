@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Flex Card - Escala Maior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Fundo cinza claro para contraste */
+        }
+        @media print {
+            body {
+                background-color: #fff;
+            }
+            .no-print {
+                display: none;
+            }
+            .print-card {
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+            }
+        }
+        /* Estilo para o código e notas */
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        /* Estilos para o teclado */
+        .key {
+            border: 1px solid #6b7280;
+            border-radius: 0 0 5px 5px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+        .white {
+            width: 50px;
+            height: 220px;
+            background-color: white;
+            color: #374151;
+        }
+        .black {
+            width: 30px;
+            height: 140px;
+            background-color: #1f2937;
+            position: absolute;
+            top: 0;
+            left: 35px;
+            z-index: 10;
+            color: white;
+        }
+        .note-highlight {
+            background-color: #3b82f6 !important;
+            color: white !important;
+            border-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <!-- Card Principal -->
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8 print-card">
+        
+        <!-- Cabeçalho -->
+        <header class="text-center border-b border-gray-200 pb-4 mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Resumo da Escala Maior 🎹</h1>
+            <p class="text-gray-500 mt-1">O guia definitivo para entender a estrutura mais importante da música.</p>
+        </header>
+
+        <main class="flex flex-col gap-8">
+            
+            <!-- Seção: A Fórmula Mágica -->
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">A Fórmula (A Receita do Bolo) 📜</h2>
+                <div class="bg-gray-100 border border-gray-200 rounded-lg p-6 text-center">
+                    <p class="text-2xl font-bold tracking-widest text-indigo-700">
+                        T - T - ST - T - T - T - ST
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h3 class="font-bold text-blue-800">T = Tom</h3>
+                        <p class="text-blue-700 mt-1">Distância de <strong>duas</strong> teclas. Ex: <code>Dó</code> para <code>Ré</code>.</p>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <h3 class="font-bold text-yellow-800">ST = Semitom</h3>
+                        <p class="text-yellow-700 mt-1">A menor distância possível, uma tecla ao lado da outra. Ex: <code>Mi</code> para <code>Fá</code>.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção: Exemplo Prático - Dó Maior -->
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Exemplo Prático: Dó Maior (C) 💡</h2>
+                <p class="text-gray-600 mb-4">A escala de Dó Maior é o ponto de partida perfeito, pois usa apenas as teclas brancas.</p>
+                <!-- Teclado Visual -->
+                <div class="flex justify-center bg-gray-800 p-4 rounded-lg overflow-x-auto">
+                    <div class="flex">
+                        <!-- Teclas Brancas com Destaque -->
+                        <div class="key white note-highlight">Dó</div>
+                        <div class="key white note-highlight">Ré</div>
+                        <div class="key white note-highlight">Mi</div>
+                        <div class="key white note-highlight">Fá</div>
+                        <div class="key white note-highlight">Sol</div>
+                        <div class="key white note-highlight">Lá</div>
+                        <div class="key white note-highlight">Si</div>
+                        <div class="key white">Dó</div>
+                        
+                        <!-- Teclas Pretas -->
+                        <div class="black" style="left: 35px;"></div>
+                        <div class="black" style="left: 85px;"></div>
+                        <div class="black" style="left: 185px;"></div>
+                        <div class="black" style="left: 235px;"></div>
+                        <div class="black" style="left: 285px;"></div>
+                    </div>
+                </div>
+                 <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4 text-sm sm:text-base">
+                    <p class="flex items-center justify-between"><code class="text-lg">Dó</code> <span class="text-blue-600 font-semibold mx-2 flex-grow text-center">→ TOM →</span> <code class="text-lg">Ré</code></p>
+                    <p class="flex items-center justify-between mt-1"><code class="text-lg">Ré</code> <span class="text-blue-600 font-semibold mx-2 flex-grow text-center">→ TOM →</span> <code class="text-lg">Mi</code></p>
+                    <p class="flex items-center justify-between mt-1"><code class="text-lg">Mi</code> <span class="text-yellow-600 font-semibold mx-2 flex-grow text-center">→ SEMITOM →</span> <code class="text-lg">Fá</code></p>
+                    <p class="flex items-center justify-between mt-1"><code class="text-lg">Fá</code> <span class="text-blue-600 font-semibold mx-2 flex-grow text-center">→ TOM →</span> <code class="text-lg">Sol</code></p>
+                    <p class="flex items-center justify-between mt-1"><code class="text-lg">Sol</code> <span class="text-blue-600 font-semibold mx-2 flex-grow text-center">→ TOM →</span> <code class="text-lg">Lá</code></p>
+                    <p class="flex items-center justify-between mt-1"><code class="text-lg">Lá</code> <span class="text-blue-600 font-semibold mx-2 flex-grow text-center">→ TOM →</span> <code class="text-lg">Si</code></p>
+                    <p class="flex items-center justify-between mt-1"><code class="text-lg">Si</code> <span class="text-yellow-600 font-semibold mx-2 flex-grow text-center">→ SEMITOM →</span> <code class="text-lg">Dó</code></p>
+                </div>
+            </section>
+
+            <!-- Seção: Graus da Escala -->
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">As Funções de Cada Nota (Graus) 👑</h2>
+                <div class="flex flex-col gap-2">
+                    <p class="p-3 bg-green-50 border border-green-200 rounded-md"><strong>I Grau (Tônica):</strong> A nota principal, a "casa". Dá o nome à escala. (Ex: <code>Dó</code>)</p>
+                    <p class="p-3 bg-gray-50 border border-gray-200 rounded-md"><strong>II Grau (Supertônica)</strong></p>
+                    <p class="p-3 bg-gray-50 border border-gray-200 rounded-md"><strong>III Grau (Mediante)</strong></p>
+                    <p class="p-3 bg-gray-50 border border-gray-200 rounded-md"><strong>IV Grau (Subdominante):</strong> Cria uma sensação de afastamento da tônica.</p>
+                    <p class="p-3 bg-red-50 border border-red-200 rounded-md"><strong>V Grau (Dominante):</strong> A nota de maior tensão, que "pede" para voltar para a tônica. (Ex: <code>Sol</code>)</p>
+                    <p class="p-3 bg-gray-50 border border-gray-200 rounded-md"><strong>VI Grau (Superdominante)</strong></p>
+                    <p class="p-3 bg-orange-50 border border-orange-200 rounded-md"><strong>VII Grau (Sensível):</strong> A nota mais próxima da tônica, cria uma forte atração para ela. (Ex: <code>Si</code>)</p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Seção de Botões -->
+        <div class="mt-8 flex flex-wrap justify-center items-center gap-4 no-print">
+            <!-- Botão Voltar -->
+            <a href="../index.html" class="bg-gray-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                &larr; Voltar à Página Inicial
+            </a>
+            
+            <!-- Botão de Impressão -->
+            <button onclick="window.print()" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300">
+                Imprimir Resumo
+            </button>
+
+            <!-- Botão Próximo -->
+            <a href="#" class="bg-gray-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-700 transition duration-300">
+                Próximo &rarr;
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
