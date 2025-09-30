@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Flex Card - Arrays JS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Fundo cinza claro para contraste */
+        }
+        @media print {
+            body {
+                background-color: #fff;
+            }
+            .no-print {
+                display: none;
+            }
+            .print-card {
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+            }
+        }
+        /* Estilo para o código */
+        code {
+            background-color: #e2e8f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+            color: #2d3748;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <!-- Card Principal -->
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8 print-card">
+        
+        <!-- Cabeçalho -->
+        <header class="text-center border-b border-gray-200 pb-4 mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Resumo do Dia 1: Fundamentos de Arrays 📚</h1>
+            <p class="text-gray-500 mt-1">Um guia rápido sobre os métodos essenciais de manipulação de arrays.</p>
+        </header>
+
+        <main class="flex flex-col gap-8">
+            
+            <!-- Seção: Métodos Principais -->
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Métodos Principais (As 4 Ferramentas)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Card: push -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h3 class="text-lg font-bold text-blue-800">push(item)</h3>
+                        <p class="text-blue-700 mt-1">Adiciona um item ao <span class="font-semibold">FINAL</span> da lista.</p>
+                        <p class="text-sm text-blue-600 mt-2 italic">Ex: Colocar um prato no topo de uma pilha. 🍽️⬆️</p>
+                    </div>
+                    
+                    <!-- Card: pop -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <h3 class="text-lg font-bold text-green-800">pop()</h3>
+                        <p class="text-green-700 mt-1">Remove um item do <span class="font-semibold">FINAL</span> da lista (e o devolve).</p>
+                        <p class="text-sm text-green-600 mt-2 italic">Ex: Pegar o prato do topo da pilha. 🍽️⬇️</p>
+                    </div>
+                    
+                    <!-- Card: unshift -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <h3 class="text-lg font-bold text-yellow-800">unshift(item)</h3>
+                        <p class="text-yellow-700 mt-1">Adiciona um item ao <span class="font-semibold">INÍCIO</span> da lista.</p>
+                        <p class="text-sm text-yellow-600 mt-2 italic">Ex: Furar a fila e se tornar o primeiro. 🚶‍♂️➡️🚶‍♀️</p>
+                    </div>
+                    
+                    <!-- Card: shift -->
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                        <h3 class="text-lg font-bold text-red-800">shift()</h3>
+                        <p class="text-red-700 mt-1">Remove um item do <span class="font-semibold">INÍCIO</span> da lista (e o devolve).</p>
+                        <p class="text-sm text-red-600 mt-2 italic">Ex: Atender a primeira pessoa da fila. ✅🚶‍♀️</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção: Conceitos-Chave de Sintaxe -->
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Conceitos-Chave de Sintaxe 💡</h2>
+                <div class="flex flex-col gap-4">
+
+                    <!-- Conceito 1 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-semibold text-gray-800">Chamar uma Ação vs. Atribuir um Valor</h3>
+                        <p class="text-gray-600 mt-1">Para executar uma ação, use sempre parênteses <code>()</code>.</p>
+                        <div class="mt-2 text-sm">
+                            <p class="flex items-center"><span class="text-green-500 mr-2">✅</span> <code>array.push('item');</code></p>
+                            <p class="flex items-center"><span class="text-red-500 mr-2">❌</span> <code>array.push = 'item';</code></p>
+                        </div>
+                    </div>
+
+                    <!-- Conceito 2 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-semibold text-gray-800">Capturar o Valor de Retorno</h3>
+                        <p class="text-gray-600 mt-1">Use <code>let variavel = ...</code> para guardar o que métodos como <code>.pop()</code> e <code>.shift()</code> devolvem.</p>
+                        <div class="mt-2 text-sm">
+                           <p><code>let itemRemovido = array.pop();</code></p>
+                        </div>
+                    </div>
+
+                    <!-- Conceito 3 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-semibold text-gray-800">A Estrutura do Comando (A "Frase")</h3>
+                        <p class="text-gray-600 mt-1">A ordem correta para dar um comando é: <code>[QUEM] . [AÇÃO] ( O QUÊ );</code></p>
+                        <div class="mt-2 text-sm">
+                           <p><code>carrinho.push(itemMovido);</code></p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        
+        <!-- Botão de Impressão -->
+        <div class="mt-8 text-center no-print">
+            <button onclick="window.print()" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300">
+                Imprimir Resumo
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
